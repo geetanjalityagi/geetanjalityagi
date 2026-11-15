@@ -26,5 +26,5 @@
 ## 📊 GitHub Stats
 
 <p align="center">
-<img height="170" src="https://streak-stats.demolab.com?user=geetanjalityagi&theme=neon&hide_border=true" alt="contribution streak">
+<img height="170" src="https://streak-stats.demolab.com?user=geetanjalityagi&theme=algolia&hide_border=true" alt="contribution streak">
 </p>
