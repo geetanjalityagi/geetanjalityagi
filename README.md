@@ -40,9 +40,35 @@
 
 ## ✨ Extras
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/geetanjalityagi/geetanjalityagi/output/github-contribution-grid-snake-dark.svg">
-  <img width="100%" alt="contribution snake" src="https://raw.githubusercontent.com/geetanjalityagi/geetanjalityagi/output/github-contribution-grid-snake.svg">
-</picture>
+name: Generate snake animation
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+      - uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=110&color=timeGradient&section=footer" alt="footer wave">
