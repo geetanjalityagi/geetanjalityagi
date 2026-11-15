@@ -22,8 +22,6 @@
 <img height="170" src="https://streak-stats.demolab.com?user=geetanjalityagi&theme=transparent&hide_border=false" alt="contribution streak">
 </p>
 
-<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=geetanjalityagi&theme=minimal&hide_border=false&radius=8" alt="activity graph">
-
 ## 🌐 Connect With Me
 
 <p align="center">
@@ -37,38 +35,3 @@
 <a href="https://github.com/geetanjalityagi/telco-customer-churn-prediction"><img width="400" src="https://github-readme-stats.vercel.app/api/pin/?username=geetanjalityagi&repo=telco-customer-churn-prediction&theme=transparent&hide_border=false" alt="telco-customer-churn-prediction"></a>
 <a href="https://github.com/geetanjalityagi/DocuMind"><img width="400" src="https://github-readme-stats.vercel.app/api/pin/?username=geetanjalityagi&repo=DocuMind&theme=transparent&hide_border=false" alt="DocuMind"></a>
 </p>
-
-## ✨ Extras
-
-name: Generate snake animation
-
-on:
-  schedule:
-    - cron: "0 */12 * * *"
-  workflow_dispatch:
-  push:
-    branches: [ main ]
-
-permissions:
-  contents: write
-
-jobs:
-  generate:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: Platane/snk@v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
-      - uses: crazy-max/ghaction-github-pages@v4
-        with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=110&color=timeGradient&section=footer" alt="footer wave">
